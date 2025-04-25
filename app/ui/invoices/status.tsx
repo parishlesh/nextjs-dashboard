@@ -6,17 +6,18 @@ export default function InvoiceStatus({ status }: { status: string }) {
     <span className={clsx(
       "inline-flex items-center rounded-full px-2 py-1 text-sm",
       {
-        'bg-gray-200 text-gray-800': status === "pending",
-        'bg-green-200 text-white': status=== "paid",
+        'bg-red-300 text-white': status === "pending",
+        'bg-green-400 text-white': status=== "paid",
       },
     )}>
-      {status=== "pending "? (
+      {status=== "pending"? (
       <>
+      Pending
       <ClockIcon className='ml-1 w-4 text-gray-500'/>
       </>
 ): null }
 
-{status=== "paid" ? (
+{status=== "paid"?(
   <>
   paid
   <CheckIcon className='ml-1 w-4 text-white'/>
